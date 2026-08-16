@@ -1,0 +1,180 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-orange: #FC9301;
+  --color-brand-orange-deep: #C97400;
+  --color-brand-dark: #0A1020;
+  --color-brand-darker: #05080F;
+  --color-brand-surface: #141D33;
+  --color-brand-light: #F4F5F7;
+  --color-brand-gray: #7A8699;
+  --color-brand-text: #05080F;
+  --color-brand-textlight: #7A8699;
+  --font-sans: var(--font-source-sans), 'Source Sans 3', 'Inter', sans-serif;
+  --font-heading: var(--font-archivo), 'Archivo', sans-serif;
+}
+
+@layer base {
+  /* Reference the next/font variables directly: Tailwind v4 tree-shakes any
+     @theme token no utility class consumes, so var(--font-sans) would be empty. */
+  body {
+    font-family: var(--font-source-sans), 'Source Sans 3', system-ui, sans-serif;
+    color: #05080F;
+    background-color: #F4F5F7;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-archivo), 'Archivo', system-ui, sans-serif;
+    letter-spacing: -0.015em;
+  }
+}
+
+/* ---- Signature shape: chamfered (bevelled) lower-left corner ---- */
+.chamfer-xs { clip-path: polygon(0 0, 100% 0, 100% 100%, 6px 100%, 0 calc(100% - 6px)); }
+.chamfer-sm { clip-path: polygon(0 0, 100% 0, 100% 100%, 10px 100%, 0 calc(100% - 10px)); }
+.chamfer    { clip-path: polygon(0 0, 100% 0, 100% 100%, 16px 100%, 0 calc(100% - 16px)); }
+.chamfer-lg { clip-path: polygon(0 0, 100% 0, 100% 100%, 28px 100%, 0 calc(100% - 28px)); }
+
+/* Hero: notch cut out of the bottom edge */
+.hero-clip {
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 54% 88%, 48% 100%, 0 100%);
+}
+
+/* Full-bleed band: notch cut into the top edge, mirrored from the hero */
+.band-clip {
+  clip-path: polygon(0 0, 46% 0, 52% 12%, 100% 12%, 100% 100%, 0 100%);
+}
+
+@media (max-width: 900px) {
+  .hero-clip, .band-clip { clip-path: none; }
+}
+
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Fine technical grid, used sparingly behind dark sections */
+.grid-texture {
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.045) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn { animation: fadeIn 0.35s cubic-bezier(0.2, 0, 0, 1) both; }
+
+/* ---- Intro curtain ----
+   Driven entirely by CSS so it dismisses even if JS never hydrates.
+   A JS-driven curtain that fails to mount would block the whole page. */
+@keyframes curtain-out {
+  0%, 58%  { opacity: 1; }
+  100%     { opacity: 0; visibility: hidden; }
+}
+@keyframes curtain-mark {
+  0%   { opacity: 0; transform: scale(0.94) translateY(10px); }
+  55%  { opacity: 1; transform: scale(1) translateY(0); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes curtain-bar {
+  0%   { transform: scaleX(0); }
+  70%  { transform: scaleX(1); }
+  100% { transform: scaleX(1); }
+}
+
+.curtain      { animation: curtain-out 1.9s cubic-bezier(0.2, 0, 0, 1) forwards; }
+.curtain-mark { animation: curtain-mark 1.9s cubic-bezier(0.2, 0, 0, 1) forwards; }
+.curtain-bar  { transform-origin: left; animation: curtain-bar 1.9s cubic-bezier(0.2, 0, 0, 1) forwards; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fadeIn { animation: none; }
+  .curtain      { animation-duration: 0.5s; }
+  .curtain-mark { animation: none; opacity: 1; }
+  .curtain-bar  { animation: none; transform: scaleX(1); }
+}
+
+/* ---- Print / PDF ----
+   Procurement teams print or PDF supplier pages into their files. Target a
+   legible black-on-white document with the company data intact, not a
+   screenshot of a dark website. */
+@media print {
+  @page {
+    size: A4;
+    margin: 16mm 14mm;
+  }
+
+  html { scroll-behavior: auto; }
+
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 10.5pt;
+    line-height: 1.45;
+  }
+
+  /* Chrome/dark sections, decoration and interactive-only affordances */
+  .no-print,
+  .curtain,
+  .grid-texture,
+  iframe,
+  video,
+  form { display: none !important; }
+
+  /* Flatten the dark brand surfaces to print-safe values */
+  [class*="bg-brand-dark"],
+  [class*="bg-brand-darker"],
+  [class*="bg-brand-surface"],
+  [class*="bg-brand-light"],
+  [class*="bg-brand-orange"],
+  [class*="bg-white"],
+  [class*="bg-gray-"] {
+    background: transparent !important;
+  }
+
+  [class*="text-white"],
+  [class*="text-gray-"],
+  [class*="text-brand-"] {
+    color: #000 !important;
+  }
+
+  /* Remove the signature chamfer — it clips content in print engines */
+  .chamfer, .chamfer-xs, .chamfer-sm, .chamfer-lg,
+  .hero-clip, .band-clip { clip-path: none !important; }
+
+  /* Neutralise scroll-reveal transforms so nothing prints invisible */
+  [style*="opacity"] { opacity: 1 !important; }
+  [style*="translate"], [style*="transform"] { transform: none !important; }
+
+  section {
+    padding: 0 0 10mm !important;
+    min-height: 0 !important;
+    break-inside: avoid;
+  }
+
+  header, footer { position: static !important; }
+
+  h1 { font-size: 20pt; }
+  h2 { font-size: 14pt; margin-top: 6mm; break-after: avoid; }
+  h3 { font-size: 11.5pt; break-after: avoid; }
+
+  img {
+    max-width: 100% !important;
+    max-height: 55mm;
+    filter: grayscale(100%);
+    break-inside: avoid;
+  }
+
+  /* Spell out link targets so a printed page stays actionable */
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 8.5pt; color: #444; }
+  a[href^="mailto:"]::after,
+  a[href^="tel:"]::after { content: ""; }
+
+  table { break-inside: avoid; width: 100% !important; min-width: 0 !important; }
+  th, td { border-bottom: 0.4pt solid #999 !important; }
+}
