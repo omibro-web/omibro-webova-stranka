@@ -33,6 +33,7 @@ export const cs: Content = {
       { label: 'Předúprava', href: '#preduprava' },
       { label: 'Technologie', href: '#technologie' },
       { label: 'Průběh zakázky', href: '#proces' },
+      { label: 'Konzultace', href: '#konzultace' },
       { label: 'Kontakt', href: '#contact' },
     ],
     cta: 'Poptávka',
@@ -204,6 +205,87 @@ export const cs: Content = {
     ],
   },
 
+  consult: {
+    eyebrow: 'Nabízíme konzultace',
+    titleLines: ['Technická konzultace', 'před zadáním zakázky'],
+    lead: 'Než se díl dostane do výroby, je potřeba rozhodnout, jakou technologií ho zpracovat, jak připravit povrch a jakou vrstvu na něj nanést. Tato rozhodnutí probereme s vámi předem — nezávazně a bez poplatku. Konzultace se týká všeho, co děláme: omílání a odjehlování, chemické předúpravy povrchu, polyuretanových nástřiků i renovace výstelek strojů.',
+    diagram: {
+      center: 'Konzultace',
+      nodes: ['Omílání', 'Odjehlování', 'Předúprava', 'PUR nástřik', 'Renovace', 'Kalkulace'],
+    },
+    topicsHeading: 'Co s vámi na konzultaci probereme',
+    topics: [
+      {
+        title: 'Volba technologie',
+        desc: 'Podle materiálu, geometrie dílu a požadovaného výsledku doporučíme, zda díl řešit vibračním omíláním, chemickou předúpravou, polyuretanovým nástřikem, nebo jejich kombinací.',
+      },
+      {
+        title: 'Odjehlování a drsnost povrchu',
+        desc: 'Volba omílacího média — keramická a plastová tělíska nebo abrazivní směsi — doby cyklu a drsnosti povrchu, které lze po zpracování reálně dosáhnout.',
+      },
+      {
+        title: 'Chemická předúprava',
+        desc: 'Sled lázní od alkalického odmaštění přes oplach, moření a pasivaci až po sušení. Probereme sledované parametry i to, jak se postup liší u oceli, nerezu a hliníku.',
+      },
+      {
+        title: 'Tvrdost polyuretanu',
+        desc: 'Volba v rozsahu 60–95 ShA podle způsobu zatížení dílu v provozu — otěr, ráz, tlak nebo chemická expozice. Tvrdost určuje životnost vrstvy.',
+      },
+      {
+        title: 'Renovace výstelek strojů',
+        desc: 'Posouzení opotřebené polyuretanové vrstvy v omílacích bubnech a vibrátorech: kdy stačí lokální oprava a kdy se vyplatí kompletní obnova výstelky.',
+      },
+      {
+        title: 'Materiály a jejich omezení',
+        desc: 'Ocel, nerezová ocel, hliník a technické plasty. Každý materiál klade v předúpravě i při nanášení vrstvy jiné nároky — řekneme vám, s čím u vašeho dílu počítat.',
+      },
+      {
+        title: 'Konstrukce dílu',
+        desc: 'Zpětná vazba k tvaru dílu — hrany, rádiusy, závity, slepé otvory a funkční plochy, které je vhodné před zpracováním zamaskovat nebo konstrukčně upravit.',
+      },
+      {
+        title: 'Rozsah a průběh zakázky',
+        desc: 'Kusová i sériová výroba, mezioperační ochrana proti korozi, balení, doprava a zda zakázku realizovat v České republice nebo ve Spolkové republice Německo.',
+      },
+      {
+        title: 'Kalkulace a termín',
+        desc: 'Co cenu tvoří: technická náročnost, materiál, počet kusů a rozsah předúpravy. Na základě konzultace připravíme podklad pro cenovou nabídku a termín.',
+      },
+    ],
+    formatHeading: 'Jak konzultace probíhá',
+    format: [
+      {
+        title: 'Nezávazně a zdarma',
+        desc: 'Konzultaci neúčtujeme a nezavazuje vás k objednávce.',
+      },
+      {
+        title: 'Telefonicky, online nebo na provozu',
+        desc: 'Obvykle 30–45 minut po telefonu či videohovorem, případně osobně na provozu v Plzni.',
+      },
+      {
+        title: 'Česky i německy',
+        desc: 'Jednáme v obou jazycích — pro zakázky v ČR i ve Spolkové republice Německo.',
+      },
+      {
+        title: 'Vede ji technik',
+        desc: 'Mluvíte přímo s člověkem, který zakázku zpracovává, ne s obchodním zprostředkovatelem.',
+      },
+    ],
+    prepareHeading: 'Co si na konzultaci připravit',
+    prepare: [
+      'Výkres nebo fotografii dílu',
+      'Materiál a stav povrchu po obrábění',
+      'Počet kusů a předpokládanou opakovanost',
+      'Požadovaný výsledek — drsnost, tvrdost vrstvy, ochranu proti korozi',
+      'Prostředí, ve kterém díl v provozu pracuje',
+      'Termín, do kterého zpracování potřebujete',
+    ],
+    ctaTitle: 'Nevíte, která technologie je pro váš díl správná?',
+    ctaBody: 'Popište nám díl a domluvíme termín konzultace s technikem.',
+    cta: 'Poptat konzultaci',
+    ctaNote: 'Nezávazné · Zdarma · Odpovídáme do dvou pracovních dnů',
+  },
+
   faq: {
     eyebrow: 'Časté dotazy',
     titleLines: ['Technické', 'otázky'],
@@ -292,6 +374,7 @@ export const cs: Content = {
           { label: 'O společnosti', href: '#about' },
           { label: 'Technologie a materiály', href: '#technologie' },
           { label: 'Průběh zakázky', href: '#proces' },
+          { label: 'Technická konzultace', href: '#konzultace' },
           { label: 'Časté dotazy', href: '#faq' },
         ],
       },

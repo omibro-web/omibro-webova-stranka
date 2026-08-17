@@ -35,6 +35,7 @@ export const de: Content = {
       { label: 'Vorbehandlung', href: '#preduprava' },
       { label: 'Technologie', href: '#technologie' },
       { label: 'Ablauf', href: '#proces' },
+      { label: 'Beratung', href: '#konzultace' },
       { label: 'Kontakt', href: '#contact' },
     ],
     cta: 'Anfrage',
@@ -206,6 +207,94 @@ export const de: Content = {
     ],
   },
 
+  consult: {
+    eyebrow: 'Wir bieten Beratung',
+    titleLines: ['Technische Beratung', 'vor der Auftragsvergabe'],
+    lead: 'Bevor ein Bauteil in die Bearbeitung geht, ist zu entscheiden, mit welchem Verfahren es behandelt wird, wie die Oberfläche vorbereitet und welche Schicht aufgetragen wird. Diese Entscheidungen besprechen wir vorab mit Ihnen — unverbindlich und kostenfrei. Die Beratung umfasst alles, was wir tun: Gleitschleifen und Entgraten, chemische Oberflächenvorbehandlung, Polyurethan-Beschichtungen sowie die Sanierung von Trommelauskleidungen.',
+    diagram: {
+      center: 'Beratung',
+      nodes: [
+        'Gleitschleifen',
+        'Entgraten',
+        'Vorbehandlung',
+        'PUR-Schicht',
+        'Sanierung',
+        'Kalkulation',
+      ],
+    },
+    topicsHeading: 'Was wir in der Beratung mit Ihnen klären',
+    topics: [
+      {
+        title: 'Wahl des Verfahrens',
+        desc: 'Nach Werkstoff, Bauteilgeometrie und gewünschtem Ergebnis empfehlen wir, ob das Bauteil durch Gleitschleifen, chemische Vorbehandlung, Polyurethan-Beschichtung oder eine Kombination daraus bearbeitet wird.',
+      },
+      {
+        title: 'Entgraten und Oberflächenrauheit',
+        desc: 'Wahl des Schleifmediums — Keramik- und Kunststoffkörper oder abrasive Mischungen — der Zykluszeit und der Rauheit, die nach der Bearbeitung realistisch erreichbar ist.',
+      },
+      {
+        title: 'Chemische Vorbehandlung',
+        desc: 'Abfolge der Bäder von der alkalischen Entfettung über Spülung, Beizen und Passivierung bis zur Trocknung. Wir besprechen die überwachten Parameter und die Unterschiede bei Stahl, Edelstahl und Aluminium.',
+      },
+      {
+        title: 'Härte des Polyurethans',
+        desc: 'Wahl im Bereich 60–95 Shore A je nach Belastung des Bauteils im Betrieb — Abrieb, Schlag, Druck oder chemische Einwirkung. Die Härte bestimmt die Lebensdauer der Schicht.',
+      },
+      {
+        title: 'Sanierung von Auskleidungen',
+        desc: 'Beurteilung der verschlissenen Polyurethanschicht in Gleitschleiftrommeln und Vibratoren: wann eine örtliche Reparatur genügt und wann sich die vollständige Erneuerung lohnt.',
+      },
+      {
+        title: 'Werkstoffe und ihre Grenzen',
+        desc: 'Stahl, Edelstahl, Aluminium und technische Kunststoffe. Jeder Werkstoff stellt bei Vorbehandlung und Beschichtung eigene Anforderungen — wir sagen Ihnen, womit bei Ihrem Bauteil zu rechnen ist.',
+      },
+      {
+        title: 'Bauteilkonstruktion',
+        desc: 'Rückmeldung zur Bauteilform — Kanten, Radien, Gewinde, Sacklöcher und Funktionsflächen, die vor der Bearbeitung abgeklebt oder konstruktiv angepasst werden sollten.',
+      },
+      {
+        title: 'Umfang und Auftragsablauf',
+        desc: 'Einzel- und Serienfertigung, Zwischenschutz gegen Korrosion, Verpackung, Transport und ob der Auftrag in Tschechien oder in der Bundesrepublik Deutschland ausgeführt wird.',
+      },
+      {
+        title: 'Kalkulation und Termin',
+        desc: 'Woraus sich der Preis ergibt: technischer Anspruch, Werkstoff, Stückzahl und Umfang der Vorbehandlung. Auf Basis der Beratung erstellen wir die Grundlage für Angebot und Termin.',
+      },
+    ],
+    formatHeading: 'Wie die Beratung abläuft',
+    format: [
+      {
+        title: 'Unverbindlich und kostenfrei',
+        desc: 'Wir berechnen die Beratung nicht, und sie verpflichtet Sie zu nichts.',
+      },
+      {
+        title: 'Telefonisch, online oder im Betrieb',
+        desc: 'In der Regel 30–45 Minuten per Telefon oder Videocall, alternativ persönlich im Betrieb in Pilsen.',
+      },
+      {
+        title: 'Deutsch und Tschechisch',
+        desc: 'Wir arbeiten in beiden Sprachen — für Aufträge in Tschechien und in Deutschland.',
+      },
+      {
+        title: 'Geführt von einem Techniker',
+        desc: 'Sie sprechen direkt mit der Person, die den Auftrag bearbeitet, nicht mit einem Vermittler.',
+      },
+    ],
+    prepareHeading: 'Was Sie zur Beratung bereithalten sollten',
+    prepare: [
+      'Zeichnung oder Foto des Bauteils',
+      'Werkstoff und Oberflächenzustand nach der Bearbeitung',
+      'Stückzahl und voraussichtliche Wiederholhäufigkeit',
+      'Gewünschtes Ergebnis — Rauheit, Schichthärte, Korrosionsschutz',
+      'Umgebung, in der das Bauteil im Betrieb arbeitet',
+      'Termin, bis zu dem die Bearbeitung benötigt wird',
+    ],
+    ctaTitle: 'Unklar, welches Verfahren für Ihr Bauteil richtig ist?',
+    ctaBody: 'Beschreiben Sie uns das Bauteil und wir vereinbaren einen Beratungstermin mit einem Techniker.',
+    cta: 'Beratung anfragen',
+    ctaNote: 'Unverbindlich · Kostenfrei · Antwort innerhalb von zwei Werktagen',
+  },
+
   faq: {
     eyebrow: 'Häufige Fragen',
     titleLines: ['Technische', 'Fragen'],
@@ -294,6 +383,7 @@ export const de: Content = {
           { label: 'Über uns', href: '#about' },
           { label: 'Technologie und Werkstoffe', href: '#technologie' },
           { label: 'Auftragsablauf', href: '#proces' },
+          { label: 'Technische Beratung', href: '#konzultace' },
           { label: 'Häufige Fragen', href: '#faq' },
         ],
       },

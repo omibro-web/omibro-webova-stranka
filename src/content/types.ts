@@ -102,6 +102,24 @@ export interface Content {
     steps: TitledItem[];
   };
 
+  consult: {
+    eyebrow: string;
+    titleLines: string[];
+    lead: string;
+    /** Hub-and-spoke diagram: one centre label, six short spoke labels. */
+    diagram: { center: string; nodes: string[] };
+    topicsHeading: string;
+    topics: TitledItem[];
+    formatHeading: string;
+    format: TitledItem[];
+    prepareHeading: string;
+    prepare: string[];
+    ctaTitle: string;
+    ctaBody: string;
+    cta: string;
+    ctaNote: string;
+  };
+
   faq: {
     eyebrow: string;
     titleLines: string[];

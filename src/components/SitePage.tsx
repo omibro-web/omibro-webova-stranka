@@ -7,6 +7,7 @@ import PretreatmentSection from '@/components/PretreatmentSection';
 import CapabilitiesSection from '@/components/CapabilitiesSection';
 import ShowcaseBand from '@/components/ShowcaseBand';
 import ProcessSection from '@/components/ProcessSection';
+import ConsultationSection from '@/components/ConsultationSection';
 import FAQSection from '@/components/FAQSection';
 import ContactFormSection from '@/components/ContactFormSection';
 import Footer from '@/components/Footer';
@@ -28,6 +29,7 @@ export default function SitePage({ t }: { t: Content }) {
         <CapabilitiesSection t={t.capabilities} />
         <ShowcaseBand t={t.showcase} />
         <ProcessSection t={t.process} />
+        <ConsultationSection t={t.consult} />
         <FAQSection t={t.faq} />
         <ContactFormSection t={t.contact} />
       </main>
