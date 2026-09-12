@@ -65,7 +65,7 @@
   "hero": {
     "eyebrow": "Dodavatelské služby pro strojírenství",
     "titleLines": [
-      "Omílání, předúprava",
+      "Omílání, předúpravaa",
       "povrchu a polyuretanové",
       "nástřiky"
     ],
@@ -73,8 +73,8 @@
     "ctaPrimary": "Kontaktovat",
     "ctaSecondary": "Oblast působení",
     "corner": "Plzeň · Česká republika",
-    "imgAlt": "Přesně opracované strojírenské díly",
-    "image": "/assets/real optimised imaginery/Copy of shutterstock_681027133.webp"
+    "image": "/assets/uploads/assets/real optimised imaginery/Copy of shutterstock_681027133.webp",
+    "imgAlt": "Přesně opracované strojírenské díly"
   },
   "industries": {
     "eyebrow": "Odvětví, pro která pracujeme",
@@ -115,17 +115,17 @@
       {
         "tab": "Dílna",
         "caption": "Omílací zařízení v provozu",
-        "image": "/assets/real optimised imaginery/Copy of sgYLXz.webp"
+        "image": "/assets/uploads/assets/real optimised imaginery/Copy of sgYLXz.webp"
       },
       {
         "tab": "Zpracování",
         "caption": "Linka pro povrchové zpracování",
-        "image": "/assets/real optimised imaginery/Copy of shutterstock_1199738893.webp"
+        "image": "/assets/uploads/assets/real optimised imaginery/Copy of shutterstock_1199738893.webp"
       },
       {
         "tab": "Díly",
         "caption": "Obrobený díl po výstupní kontrole",
-        "image": "/assets/real optimised imaginery/Copy of shutterstock_2728784533.webp"
+        "image": "/assets/uploads/assets/real optimised imaginery/Copy of shutterstock_2728784533.webp"
       }
     ],
     "badge": "Plzeň"
@@ -141,22 +141,22 @@
       {
         "title": "Vibrační omílání a odjehlování",
         "desc": "Srážení otřepů, vyhlazení hran a sjednocení drsnosti povrchu obrobených kovových i plastových dílů.",
-        "image": "/assets/real optimised imaginery/Copy of shutterstock_697194019.webp"
+        "image": "/assets/uploads/assets/real optimised imaginery/Copy of shutterstock_697194019.webp"
       },
       {
         "title": "Chemická předúprava povrchu",
         "desc": "Alkalické odmaštění, moření a pasivace — příprava chemicky čistého povrchu před nanesením vrstvy.",
-        "image": "/assets/real optimised imaginery/Copy of shutterstock_2216877165.webp"
+        "image": "/assets/uploads/assets/real optimised imaginery/Copy of shutterstock_2216877165.webp"
       },
       {
         "title": "Polyuretanové nástřiky (PUR)",
         "desc": "Nanášení pružné otěruvzdorné elastomerní vrstvy na díly z kusové i sériové výroby.",
-        "image": "/assets/real optimised imaginery/Copy of PUR 1.webp"
+        "image": "/assets/uploads/assets/real optimised imaginery/Copy of PUR 1.webp"
       },
       {
         "title": "Renovace výstelek strojů",
         "desc": "Obnova opotřebené polyuretanové vrstvy na vnitřních stěnách omílacích bubnů a vibrátorů.",
-        "image": "/assets/real optimised imaginery/Copy of shutterstock_2003114246.webp"
+        "image": "/assets/uploads/assets/real optimised imaginery/Copy of shutterstock_2003114246.webp"
       }
     ]
   },
@@ -167,6 +167,8 @@
       "čistota povrchu"
     ],
     "lead": "Polyuretanová vrstva drží pouze na chemicky čistém povrchu. Zbytky řezných olejů, chladicích emulzí a oxidů z obrábění je nutné odstranit dřív, než se díl dostane do nástřikové kabiny. Předúprava proto probíhá jako samostatný, řízený technologický krok.",
+    "image": "/assets/uploads/assets/real optimised imaginery/Copy of pexels-fish-steak-fries-380077671-14593018.webp",
+    "imgAlt": "Kovové díly připravené k chemické předúpravě povrchu",
     "steps": [
       {
         "title": "Alkalické odmaštění",
@@ -217,9 +219,7 @@
         "monitored": "pH, doba expozice"
       }
     ],
-    "note": "Procesní chemikálie jsou spotřební materiál. Lázně se v průběhu zpracování vyčerpávají a jejich koncentrace se kontroluje a doplňuje podle rozpracovaného množství dílů.",
-    "imgAlt": "Kovové díly připravené k chemické předúpravě povrchu",
-    "image": "/assets/real optimised imaginery/Copy of pexels-fish-steak-fries-380077671-14593018.webp"
+    "note": "Procesní chemikálie jsou spotřební materiál. Lázně se v průběhu zpracování vyčerpávají a jejich koncentrace se kontroluje a doplňuje podle rozpracovaného množství dílů."
   },
   "capabilities": {
     "eyebrow": "Technologie a materiály",
@@ -228,6 +228,10 @@
       "materiálem a dílem"
     ],
     "body": "Omílací média volíme podle materiálu a požadované výsledné drsnosti — od keramických a plastových tělísek po abrazivní směsi. U polyuretanu určuje tvrdost vrstvy způsob zatížení dílu v provozu.",
+    "imageMain": "/assets/uploads/assets/real optimised imaginery/Copy of shutterstock_2669630375.webp",
+    "imgAltMain": "Obrábění a příprava dílu před povrchovým zpracováním",
+    "imageInset": "/assets/uploads/assets/real optimised imaginery/Copy of shutterstock_2254833743.webp",
+    "imgAltInset": "Drobné kovové komponenty připravené k omílání",
     "materialsHeading": "Zpracovávané materiály",
     "materials": [
       "Ocel",
@@ -252,11 +256,7 @@
         "value": "4",
         "label": "Skupiny zpracovávaných materiálů"
       }
-    ],
-    "imgAltMain": "Obrábění a příprava dílu před povrchovým zpracováním",
-    "imgAltInset": "Drobné kovové komponenty připravené k omílání",
-    "imageMain": "/assets/real optimised imaginery/Copy of shutterstock_2669630375.webp",
-    "imageInset": "/assets/real optimised imaginery/Copy of shutterstock_2254833743.webp"
+    ]
   },
   "showcase": {
     "eyebrow": "Provoz",
@@ -265,8 +265,8 @@
       "zařízení, ne přes prostředníka"
     ],
     "body": "Zakázky realizujeme v České republice nebo ve Spolkové republice Německo — podle technické náročnosti a dohodnutých parametrů.",
-    "imgAlt": "Průmyslová linka pro povrchové zpracování dílů",
-    "image": "/assets/real optimised imaginery/Copy of shutterstock_1199738893.webp"
+    "image": "/assets/uploads/assets/real optimised imaginery/Copy of shutterstock_1199738893.webp",
+    "imgAlt": "Průmyslová linka pro povrchové zpracování dílů"
   },
   "process": {
     "eyebrow": "Průběh zakázky",
