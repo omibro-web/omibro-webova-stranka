@@ -23,5 +23,6 @@ if (existsSync(envFile)) {
 }
 
 const [, , ...cmdParts] = process.argv;
-const result = spawnSync(cmdParts.join(' '), { stdio: 'inherit', shell: true, env: process.env });
+const cmd = cmdParts.map((part) => (part.includes(' ') ? `"${part}"` : part)).join(' ');
+const result = spawnSync(cmd, { stdio: 'inherit', shell: true, env: process.env });
 process.exit(result.status ?? 1);
