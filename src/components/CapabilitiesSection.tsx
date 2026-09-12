@@ -14,7 +14,7 @@ export default function CapabilitiesSection({ t }: { t: Content['capabilities'] 
             <Reveal>
               <div className="chamfer relative aspect-[16/10] overflow-hidden">
                 <img
-                  src="/assets/real optimised imaginery/Copy of shutterstock_2669630375.webp"
+                  src={t.imageMain}
                   alt={t.imgAltMain}
                   className="w-full h-full object-cover"
                 />
@@ -25,7 +25,7 @@ export default function CapabilitiesSection({ t }: { t: Content['capabilities'] 
             <Reveal delay={0.12}>
               <div className="chamfer-sm relative -mt-16 ml-auto mr-6 w-48 sm:w-60 aspect-[4/3] overflow-hidden border border-white/10 hidden sm:block">
                 <img
-                  src="/assets/real optimised imaginery/Copy of shutterstock_2254833743.webp"
+                  src={t.imageInset}
                   alt={t.imgAltInset}
                   className="w-full h-full object-cover"
                 />

@@ -4,12 +4,6 @@ import { useState } from 'react';
 import { Reveal } from '@/components/motion/Reveal';
 import type { Content } from '@/content/types';
 
-const tabImages = [
-  '/assets/real optimised imaginery/Copy of sgYLXz.webp',
-  '/assets/real optimised imaginery/Copy of shutterstock_1199738893.webp',
-  '/assets/real optimised imaginery/Copy of shutterstock_2728784533.webp',
-];
-
 export default function AboutSection({ t }: { t: Content['about'] }) {
   const [active, setActive] = useState(0);
   const view = t.tabs[active];
@@ -70,8 +64,8 @@ export default function AboutSection({ t }: { t: Content['about'] }) {
 
               <div className="chamfer relative w-full aspect-[4/3] lg:aspect-[16/12] overflow-hidden bg-brand-dark">
                 <img
-                  key={tabImages[active]}
-                  src={tabImages[active]}
+                  key={view.image}
+                  src={view.image}
                   alt={view.caption}
                   className="w-full h-full object-cover animate-fadeIn"
                 />

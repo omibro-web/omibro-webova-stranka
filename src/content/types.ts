@@ -43,6 +43,7 @@ export interface Content {
     ctaSecondary: string;
     corner: string;
     imgAlt: string;
+    image: string;
   };
 
   industries: {
@@ -55,7 +56,7 @@ export interface Content {
     titleLines: string[];
     lead: string;
     points: TitledItem[];
-    tabs: { tab: string; caption: string }[];
+    tabs: { tab: string; caption: string; image: string }[];
     badge: string;
   };
 
@@ -63,7 +64,7 @@ export interface Content {
     eyebrow: string;
     titleLines: string[];
     note: string;
-    items: TitledItem[];
+    items: (TitledItem & { image: string })[];
   };
 
   pretreat: {
@@ -76,6 +77,7 @@ export interface Content {
     rows: { stage: string; agent: string; monitored: string }[];
     note: string;
     imgAlt: string;
+    image: string;
   };
 
   capabilities: {
@@ -87,6 +89,8 @@ export interface Content {
     stats: { value: string; label: string }[];
     imgAltMain: string;
     imgAltInset: string;
+    imageMain: string;
+    imageInset: string;
   };
 
   showcase: {
@@ -94,6 +98,7 @@ export interface Content {
     titleLines: string[];
     body: string;
     imgAlt: string;
+    image: string;
   };
 
   process: {

@@ -30,7 +30,7 @@ export default function PretreatmentSection({ t }: { t: Content['pretreat'] }) {
             <Reveal delay={0.1}>
               <div className="chamfer relative aspect-[4/3] overflow-hidden">
                 <img
-                  src="/assets/real optimised imaginery/Copy of pexels-fish-steak-fries-380077671-14593018.webp"
+                  src={t.image}
                   alt={t.imgAlt}
                   className="w-full h-full object-cover"
                 />

@@ -18,7 +18,7 @@ export default function HeroSection({ t }: { t: Content['hero'] }) {
     <section className="relative bg-brand-dark text-white min-h-[92vh] flex items-end hero-clip pt-40 pb-32 md:pb-44 overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
-          src="/assets/real optimised imaginery/Copy of shutterstock_681027133.webp"
+          src={t.image}
           alt={t.imgAlt}
           className="w-full h-full object-cover opacity-45"
         />

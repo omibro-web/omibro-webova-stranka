@@ -8,7 +8,7 @@ export default function ShowcaseBand({ t }: { t: Content['showcase'] }) {
   return (
     <section className="relative bg-brand-darker text-white band-clip min-h-[74vh] flex items-end overflow-hidden">
       <ParallaxImage
-        src="/assets/real optimised imaginery/Copy of shutterstock_1199738893.webp"
+        src={t.image}
         alt={t.imgAlt}
         amount={10}
       />

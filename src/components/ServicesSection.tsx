@@ -3,44 +3,32 @@
 import { Reveal, Stagger, StaggerItem } from '@/components/motion/Reveal';
 import type { Content } from '@/content/types';
 
-const media = [
-  {
-    img: '/assets/real optimised imaginery/Copy of shutterstock_697194019.webp',
-    icon: (
-      <>
-        <circle cx="12" cy="12" r="8.5" />
-        <path d="M12 3.5v3.2M12 17.3v3.2M3.5 12h3.2M17.3 12h3.2" />
-        <circle cx="12" cy="12" r="3" />
-      </>
-    ),
-  },
-  {
-    img: '/assets/real optimised imaginery/Copy of shutterstock_2216877165.webp',
-    icon: (
-      <>
-        <path d="M7 3.5h10l-1 6.5a4.2 4.2 0 0 1-8 0z" />
-        <path d="M12 13.5v7M8.5 20.5h7" />
-      </>
-    ),
-  },
-  {
-    img: '/assets/real optimised imaginery/Copy of PUR 1.webp',
-    icon: (
-      <>
-        <path d="M5 8.5h6.5l5-3.5v14l-5-3.5H5z" />
-        <path d="M19.5 8.5c1 1 1 5.2 0 7" />
-      </>
-    ),
-  },
-  {
-    img: '/assets/real optimised imaginery/Copy of shutterstock_2003114246.webp',
-    icon: (
-      <>
-        <path d="M20 12a8 8 0 1 1-2.5-5.8" />
-        <path d="M20.5 3.5V9h-5.4" />
-      </>
-    ),
-  },
+const icons = [
+  (
+    <>
+      <circle cx="12" cy="12" r="8.5" />
+      <path d="M12 3.5v3.2M12 17.3v3.2M3.5 12h3.2M17.3 12h3.2" />
+      <circle cx="12" cy="12" r="3" />
+    </>
+  ),
+  (
+    <>
+      <path d="M7 3.5h10l-1 6.5a4.2 4.2 0 0 1-8 0z" />
+      <path d="M12 13.5v7M8.5 20.5h7" />
+    </>
+  ),
+  (
+    <>
+      <path d="M5 8.5h6.5l5-3.5v14l-5-3.5H5z" />
+      <path d="M19.5 8.5c1 1 1 5.2 0 7" />
+    </>
+  ),
+  (
+    <>
+      <path d="M20 12a8 8 0 1 1-2.5-5.8" />
+      <path d="M20.5 3.5V9h-5.4" />
+    </>
+  ),
 ];
 
 export default function ServicesSection({ t }: { t: Content['services'] }) {
@@ -72,7 +60,7 @@ export default function ServicesSection({ t }: { t: Content['services'] }) {
               <article className="group chamfer h-full flex flex-col bg-brand-light border border-gray-200 hover:border-brand-orange transition-colors duration-300 overflow-hidden">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img
-                    src={media[i].img}
+                    src={s.image}
                     alt={s.title}
                     className="w-full h-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.06]"
                   />
@@ -88,7 +76,7 @@ export default function ServicesSection({ t }: { t: Content['services'] }) {
                       strokeLinejoin="round"
                       aria-hidden="true"
                     >
-                      {media[i].icon}
+                      {icons[i]}
                     </svg>
                   </span>
                 </div>

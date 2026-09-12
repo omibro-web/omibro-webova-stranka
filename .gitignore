@@ -17,6 +17,10 @@
 /.next/
 /out/
 
+# tinacms (regenerated on every `tinacms build` / `tinacms dev`)
+/tina/__generated__/
+/public/admin/
+
 # production
 /build
 
