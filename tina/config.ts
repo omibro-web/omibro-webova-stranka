@@ -17,7 +17,11 @@ const navItem = [
 ] as const;
 
 export default defineConfig({
-  branch: process.env.NEXT_PUBLIC_TINA_BRANCH ?? process.env.VERCEL_GIT_COMMIT_REF ?? 'main',
+  branch:
+    process.env.NEXT_PUBLIC_TINA_BRANCH ??
+    process.env.BRANCH ?? // Netlify
+    process.env.VERCEL_GIT_COMMIT_REF ?? // Vercel
+    'main',
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID ?? null,
   token: process.env.TINA_TOKEN ?? null,
 
