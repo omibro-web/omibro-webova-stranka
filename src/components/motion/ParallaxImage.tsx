@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
+import { cleanAttribute } from '@/sanity/lib/stega';
 
 /**
  * Image that drifts against the scroll direction inside its container.
@@ -32,8 +33,8 @@ export default function ParallaxImage({
   return (
     <div ref={ref} className={`absolute inset-0 overflow-hidden ${className}`}>
       <motion.img
-        src={src}
-        alt={alt}
+        src={cleanAttribute(src)}
+        alt={cleanAttribute(alt)}
         style={
           reduce
             ? { top: 0, height: '100%' }

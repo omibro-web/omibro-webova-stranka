@@ -2,6 +2,7 @@
 
 import { Reveal, Stagger, StaggerItem } from '@/components/motion/Reveal';
 import type { Content } from '@/content/types';
+import { cleanAttribute } from '@/sanity/lib/stega';
 
 const icons = [
   (
@@ -60,8 +61,8 @@ export default function ServicesSection({ t }: { t: Content['services'] }) {
               <article className="group chamfer h-full flex flex-col bg-brand-light border border-gray-200 hover:border-brand-orange transition-colors duration-300 overflow-hidden">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img
-                    src={s.image}
-                    alt={s.title}
+                    src={cleanAttribute(s.image)}
+                    alt={cleanAttribute(s.title)}
                     className="w-full h-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.06]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-brand-darker/70 via-brand-darker/10 to-transparent" />

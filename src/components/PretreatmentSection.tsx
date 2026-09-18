@@ -2,6 +2,7 @@
 
 import { Reveal, Stagger, StaggerItem } from '@/components/motion/Reveal';
 import type { Content } from '@/content/types';
+import { cleanAttribute } from '@/sanity/lib/stega';
 
 export default function PretreatmentSection({ t }: { t: Content['pretreat'] }) {
   return (
@@ -30,8 +31,8 @@ export default function PretreatmentSection({ t }: { t: Content['pretreat'] }) {
             <Reveal delay={0.1}>
               <div className="chamfer relative aspect-[4/3] overflow-hidden">
                 <img
-                  src={t.image}
-                  alt={t.imgAlt}
+                  src={cleanAttribute(t.image)}
+                  alt={cleanAttribute(t.imgAlt)}
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-brand-darker/15" />

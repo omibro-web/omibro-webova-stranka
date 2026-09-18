@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from 'framer-motion';
 import type { Content } from '@/content/types';
+import { cleanAttribute } from '@/sanity/lib/stega';
 
 const EASE = [0.2, 0, 0, 1] as const;
 
@@ -18,8 +19,8 @@ export default function HeroSection({ t }: { t: Content['hero'] }) {
     <section className="relative bg-brand-dark text-white min-h-[92vh] flex items-end hero-clip pt-40 pb-32 md:pb-44 overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
-          src={t.image}
-          alt={t.imgAlt}
+          src={cleanAttribute(t.image)}
+          alt={cleanAttribute(t.imgAlt)}
           className="w-full h-full object-cover opacity-45"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-brand-darker via-brand-darker/85 to-brand-dark/45" />

@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Reveal } from '@/components/motion/Reveal';
 import { company, addressLine } from '@/content/company';
 import type { Content } from '@/content/types';
+import { cleanAttribute } from '@/sanity/lib/stega';
 
 const EASE = [0.2, 0, 0, 1] as const;
 
@@ -95,7 +96,7 @@ export default function ContactFormSection({ t }: { t: Content['contact'] }) {
                       }`}
                     >
                       {row.href ? (
-                        <a href={row.href} className="hover:text-brand-orange-deep transition-colors">
+                        <a href={cleanAttribute(row.href)} className="hover:text-brand-orange-deep transition-colors">
                           {row.value}
                         </a>
                       ) : (
@@ -110,7 +111,7 @@ export default function ContactFormSection({ t }: { t: Content['contact'] }) {
             <Reveal delay={0.14}>
               <div className="chamfer no-print mt-8 relative w-full h-56 overflow-hidden border border-gray-300">
                 <iframe
-                  title={t.mapTitle}
+                  title={cleanAttribute(t.mapTitle)}
                   src="https://www.google.com/maps?q=Bolzanova+2659%2F15%2C+301+00+Plze%C5%88&output=embed"
                   className="w-full h-full border-0"
                   loading="lazy"
@@ -138,7 +139,7 @@ export default function ContactFormSection({ t }: { t: Content['contact'] }) {
                       type="text"
                       required
                       autoComplete="name"
-                      placeholder={t.form.namePlaceholder}
+                      placeholder={cleanAttribute(t.form.namePlaceholder)}
                       className={inputClass}
                     />
                   </div>
@@ -154,7 +155,7 @@ export default function ContactFormSection({ t }: { t: Content['contact'] }) {
                       name="company"
                       type="text"
                       autoComplete="organization"
-                      placeholder={t.form.companyPlaceholder}
+                      placeholder={cleanAttribute(t.form.companyPlaceholder)}
                       className={inputClass}
                     />
                   </div>
@@ -174,7 +175,7 @@ export default function ContactFormSection({ t }: { t: Content['contact'] }) {
                       type="email"
                       required
                       autoComplete="email"
-                      placeholder={t.form.emailPlaceholder}
+                      placeholder={cleanAttribute(t.form.emailPlaceholder)}
                       className={inputClass}
                     />
                   </div>
@@ -190,7 +191,7 @@ export default function ContactFormSection({ t }: { t: Content['contact'] }) {
                       name="phone"
                       type="tel"
                       autoComplete="tel"
-                      placeholder={t.form.phonePlaceholder}
+                      placeholder={cleanAttribute(t.form.phonePlaceholder)}
                       className={inputClass}
                     />
                   </div>
@@ -207,7 +208,7 @@ export default function ContactFormSection({ t }: { t: Content['contact'] }) {
                     id="message"
                     name="message"
                     required
-                    placeholder={t.form.messagePlaceholder}
+                    placeholder={cleanAttribute(t.form.messagePlaceholder)}
                     className={`${inputClass} h-36 resize-none`}
                   />
                 </div>

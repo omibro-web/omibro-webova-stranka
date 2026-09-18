@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { Reveal, Stagger, StaggerItem } from '@/components/motion/Reveal';
 import type { Content } from '@/content/types';
+import { cleanAttribute } from '@/sanity/lib/stega';
 
 const EASE = [0.2, 0, 0, 1] as const;
 
@@ -27,7 +28,7 @@ function ConsultDiagram({ t }: { t: Content['consult']['diagram'] }) {
       viewBox="0 0 560 400"
       className="w-full h-auto"
       role="img"
-      aria-label={`${t.center}: ${nodes.join(', ')}`}
+      aria-label={cleanAttribute(`${t.center}: ${nodes.join(', ')}`)}
     >
       {/* Slow counter-rotating guide rings */}
       {[

@@ -3,13 +3,14 @@
 import ParallaxImage from '@/components/motion/ParallaxImage';
 import { Reveal } from '@/components/motion/Reveal';
 import type { Content } from '@/content/types';
+import { cleanAttribute } from '@/sanity/lib/stega';
 
 export default function ShowcaseBand({ t }: { t: Content['showcase'] }) {
   return (
     <section className="relative bg-brand-darker text-white band-clip min-h-[74vh] flex items-end overflow-hidden">
       <ParallaxImage
-        src={t.image}
-        alt={t.imgAlt}
+        src={cleanAttribute(t.image)}
+        alt={cleanAttribute(t.imgAlt)}
         amount={10}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-brand-darker via-brand-darker/65 to-brand-darker/25" />

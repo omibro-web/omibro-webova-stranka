@@ -3,6 +3,7 @@
 import { Reveal } from '@/components/motion/Reveal';
 import { company } from '@/content/company';
 import type { Content } from '@/content/types';
+import { cleanAttribute } from '@/sanity/lib/stega';
 
 export default function Footer({ t }: { t: Content }) {
   const f = t.footer;
@@ -51,7 +52,7 @@ export default function Footer({ t }: { t: Content }) {
                 {col.links.map((link) => (
                   <li key={link.label}>
                     <a
-                      href={link.href}
+                      href={cleanAttribute(link.href)}
                       className="text-sm text-gray-300 hover:text-brand-orange transition-colors"
                     >
                       {link.label}

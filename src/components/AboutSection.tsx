@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Reveal } from '@/components/motion/Reveal';
 import type { Content } from '@/content/types';
+import { cleanAttribute } from '@/sanity/lib/stega';
 
 export default function AboutSection({ t }: { t: Content['about'] }) {
   const [active, setActive] = useState(0);
@@ -64,9 +65,9 @@ export default function AboutSection({ t }: { t: Content['about'] }) {
 
               <div className="chamfer relative w-full aspect-[4/3] lg:aspect-[16/12] overflow-hidden bg-brand-dark">
                 <img
-                  key={view.image}
-                  src={view.image}
-                  alt={view.caption}
+                  key={cleanAttribute(view.image)}
+                  src={cleanAttribute(view.image)}
+                  alt={cleanAttribute(view.caption)}
                   className="w-full h-full object-cover animate-fadeIn"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-darker/85 via-transparent to-transparent" />

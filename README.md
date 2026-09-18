@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Omibro web
 
-## Getting Started
+Next.js 16 web s obsahem spravovaným v Sanity.
 
-First, run the development server:
+## Lokální vývoj
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+V `.env.local` musí být:
+
+```dotenv
+NEXT_PUBLIC_SANITY_PROJECT_ID="..."
+NEXT_PUBLIC_SANITY_DATASET="production"
+NEXT_PUBLIC_SANITY_API_VERSION="2026-09-01"
+NEXT_PUBLIC_SANITY_STUDIO_URL="/studio"
+SANITY_API_READ_TOKEN="..."
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Pak spusťte:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Web: [http://localhost:3000](http://localhost:3000)
+- Sanity Studio: [http://localhost:3000/studio](http://localhost:3000/studio)
+- Vizuální editace: v Sanity Studiu otevřete nástroj **Prezentace** a klikněte přímo na text nebo obrázek v náhledu.
 
-## Learn More
+## Obsahový model
 
-To learn more about Next.js, take a look at the following resources:
+Studio obsahuje jen dva pevné dokumenty: `page-cs` a `page-de`. Horní strukturu stránky nelze přes Studio měnit. Pole s pevným počtem položek mají validační pravidla, která zabrání publikování změněné struktury.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Kontrola před nasazením
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run lint
+npx tsc --noEmit
+npm run build
+```
 
-## Deploy on Vercel
+V hostingu nastavte stejné proměnné prostředí jako v `.env.local`. Produkční URL webu musí být přidaná v Sanity CORS origins s povolenými credentials, aby fungoval náhled a vizuální editace.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## MCP
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Oficiální Sanity MCP server je `https://mcp.sanity.io`. V Codexu je možné ověřit připojení příkazem:
+
+```bash
+codex mcp list
+```

@@ -2,6 +2,7 @@
 
 import { Reveal, Stagger, StaggerItem } from '@/components/motion/Reveal';
 import type { Content } from '@/content/types';
+import { cleanAttribute } from '@/sanity/lib/stega';
 
 export default function CapabilitiesSection({ t }: { t: Content['capabilities'] }) {
   return (
@@ -14,8 +15,8 @@ export default function CapabilitiesSection({ t }: { t: Content['capabilities'] 
             <Reveal>
               <div className="chamfer relative aspect-[16/10] overflow-hidden">
                 <img
-                  src={t.imageMain}
-                  alt={t.imgAltMain}
+                  src={cleanAttribute(t.imageMain)}
+                  alt={cleanAttribute(t.imgAltMain)}
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-brand-darker/25" />
@@ -25,8 +26,8 @@ export default function CapabilitiesSection({ t }: { t: Content['capabilities'] 
             <Reveal delay={0.12}>
               <div className="chamfer-sm relative -mt-16 ml-auto mr-6 w-48 sm:w-60 aspect-[4/3] overflow-hidden border border-white/10 hidden sm:block">
                 <img
-                  src={t.imageInset}
-                  alt={t.imgAltInset}
+                  src={cleanAttribute(t.imageInset)}
+                  alt={cleanAttribute(t.imgAltInset)}
                   className="w-full h-full object-cover"
                 />
               </div>

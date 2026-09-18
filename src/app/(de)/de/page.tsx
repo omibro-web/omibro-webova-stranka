@@ -1,6 +1,7 @@
 import SitePage from '@/components/SitePage';
-import { de } from '@/content/de';
+import { getPageContent } from '@/sanity/lib/content';
 
-export default function HomeDe() {
-  return <SitePage t={de} />;
+export default async function HomeDe() {
+  const content = await getPageContent('de');
+  return <SitePage t={content} />;
 }

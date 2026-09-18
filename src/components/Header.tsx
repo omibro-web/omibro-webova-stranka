@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { company } from '@/content/company';
 import type { Content } from '@/content/types';
+import { cleanAttribute } from '@/sanity/lib/stega';
 
 const EASE = [0.2, 0, 0, 1] as const;
 
@@ -25,7 +26,7 @@ export default function Header({ t }: { t: Content }) {
     };
   }, [menuOpen]);
 
-  const homeHref = t.locale === 'de' ? '/de' : '/';
+  const homeHref = cleanAttribute(t.locale) === 'de' ? '/de' : '/';
 
   return (
     <header
@@ -36,7 +37,7 @@ export default function Header({ t }: { t: Content }) {
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between gap-6">
-        <a href={homeHref} className="shrink-0" aria-label={t.nav.home}>
+        <a href={homeHref} className="shrink-0" aria-label={cleanAttribute(t.nav.home)}>
           <img
             src="/logo.svg"
             alt={company.name}
@@ -48,7 +49,7 @@ export default function Header({ t }: { t: Content }) {
           {t.nav.items.map((item) => (
             <a
               key={item.href}
-              href={item.href}
+              href={cleanAttribute(item.href)}
               className="text-[12px] font-bold uppercase tracking-[0.1em] text-gray-200 hover:text-brand-orange transition-colors whitespace-nowrap"
             >
               {item.label}
@@ -65,8 +66,8 @@ export default function Header({ t }: { t: Content }) {
           </a>
 
           <a
-            href={t.langSwitch.href}
-            aria-label={t.langSwitch.aria}
+            href={cleanAttribute(t.langSwitch.href)}
+            aria-label={cleanAttribute(t.langSwitch.aria)}
             className="chamfer-xs hidden sm:flex items-center justify-center border border-white/25 px-3 py-2 text-[11px] font-bold tracking-[0.1em] hover:border-brand-orange hover:text-brand-orange transition-colors"
           >
             {t.langSwitch.label}
@@ -82,7 +83,7 @@ export default function Header({ t }: { t: Content }) {
           <button
             onClick={() => setMenuOpen(true)}
             className="xl:hidden w-10 h-10 flex items-center justify-center border border-white/20 hover:border-brand-orange transition-colors cursor-pointer chamfer-xs"
-            aria-label={t.nav.open}
+            aria-label={cleanAttribute(t.nav.open)}
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" strokeWidth="2" />
@@ -106,7 +107,7 @@ export default function Header({ t }: { t: Content }) {
               <button
                 onClick={() => setMenuOpen(false)}
                 className="w-10 h-10 flex items-center justify-center border border-white/20 hover:border-brand-orange transition-colors cursor-pointer chamfer-xs"
-                aria-label={t.nav.close}
+                aria-label={cleanAttribute(t.nav.close)}
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M6 18L18 6M6 6l12 12" strokeLinecap="round" strokeWidth="2" />
@@ -118,7 +119,7 @@ export default function Header({ t }: { t: Content }) {
               {t.nav.items.map((item) => (
                 <a
                   key={item.href}
-                  href={item.href}
+                  href={cleanAttribute(item.href)}
                   onClick={() => setMenuOpen(false)}
                   className="text-lg font-bold uppercase tracking-wide py-3 border-b border-white/5 hover:text-brand-orange transition-colors"
                 >
@@ -141,7 +142,7 @@ export default function Header({ t }: { t: Content }) {
                 {company.email}
               </a>
               <a
-                href={t.langSwitch.href}
+                href={cleanAttribute(t.langSwitch.href)}
                 className="text-sm text-gray-400 hover:text-brand-orange transition-colors"
               >
                 {t.langSwitch.aria}

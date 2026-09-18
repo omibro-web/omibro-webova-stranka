@@ -17,7 +17,7 @@
 /.next/
 /out/
 
-# tinacms (regenerated on every `tinacms build` / `tinacms dev`)
+# legacy TinaCMS generated output (safe to remove locally)
 /tina/__generated__/
 /public/admin/
 

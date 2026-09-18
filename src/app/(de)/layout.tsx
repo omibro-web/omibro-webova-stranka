@@ -3,7 +3,9 @@ import '../globals.css';
 import RootHtml from '@/components/RootHtml';
 import { buildMetadata } from '@/app/metadata';
 
-export const metadata: Metadata = buildMetadata('de');
+export async function generateMetadata(): Promise<Metadata> {
+  return buildMetadata('de');
+}
 
 export default function DeLayout({ children }: { children: React.ReactNode }) {
   return <RootHtml locale="de">{children}</RootHtml>;
