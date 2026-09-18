@@ -23,6 +23,7 @@ npm run dev
 
 - Web: [http://localhost:3000](http://localhost:3000)
 - Sanity Studio: [http://localhost:3000/studio](http://localhost:3000/studio)
+- Nasazené Studio: [https://omibro.sanity.studio](https://omibro.sanity.studio)
 - Vizuální editace: v Sanity Studiu otevřete nástroj **Prezentace** a klikněte přímo na text nebo obrázek v náhledu.
 
 ## Obsahový model

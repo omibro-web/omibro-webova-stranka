@@ -17,6 +17,10 @@
 /.next/
 /out/
 
+# Sanity Studio build output
+/.sanity/
+/dist/
+
 # legacy TinaCMS generated output (safe to remove locally)
 /tina/__generated__/
 /public/admin/
