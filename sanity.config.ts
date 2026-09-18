@@ -7,8 +7,15 @@ import { structureTool } from 'sanity/structure'
 import { schemaTypes } from './src/sanity/schemaTypes'
 import { resolve } from './src/sanity/presentation/resolve'
 
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!
+// These identifiers are public and must also be available in the standalone
+// Studio build, where Next.js environment variables are not injected.
+const projectId = 'biwnavan'
+const dataset = 'production'
+
+const previewOrigin =
+  typeof window !== 'undefined' && !window.location.hostname.endsWith('sanity.studio')
+    ? window.location.origin
+    : 'https://omibro.cz'
 
 export default defineConfig({
   name: 'default',
@@ -35,6 +42,7 @@ export default defineConfig({
     presentationTool({
       resolve,
       previewUrl: {
+        origin: previewOrigin,
         previewMode: { enable: '/api/draft-mode/enable' },
       },
     }),
